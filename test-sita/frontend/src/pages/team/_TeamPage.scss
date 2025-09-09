@@ -1,0 +1,182 @@
+@import "../../scss/colors.scss";
+
+.topPage {
+    .filters {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        .filterTeam {
+            margin-right: 0.5rem;
+            span {
+                display: block;
+                margin-bottom: 0.3rem;
+                color: white;
+                font-family: "Bw Modelica SS02 Bold";
+                font-size: 0.8rem;
+            }
+
+            input,
+            select {
+                color: white;
+                font-family: "Bw Modelica SS02 Regular";
+                padding: 0.5rem 1rem;
+                border: none;
+                background-color: $active-color-darker;
+                border: 1px solid transparent;
+
+                border-radius: 1rem;
+
+                &:focus {
+                    outline: none;
+                    border: 1px solid $accent-color-weak;
+                }
+
+                &::placeholder {
+                    color: $accent-color-weak;
+                }
+            }
+
+            .off {
+                color: $accent-color-weak;
+
+                option {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .filterButtons {
+        button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.2rem;
+            outline: none;
+            border: none;
+            margin-right: 0.5rem;
+            font-family: "Bw Modelica SS02 Regular";
+            transition: 0.1s transform ease-in-out;
+
+            &:hover {
+                transform: translateY(-0.1rem);
+            }
+        }
+
+        .search,
+        .clear {
+            background-color: $active-color;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .entireTeam {
+        margin-top: 2rem;
+        display: flex;
+
+        .unavailable {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        .bigMember {
+            cursor: pointer;
+            background-color: $active-color;
+            position: relative;
+            color: white;
+            height: 18rem;
+            width: 18rem;
+            padding: 1.5rem;
+
+            box-sizing: border-box;
+            transition: 0.1s transform ease-in-out;
+
+            &:hover {
+                transform: translateY(-0.2rem);
+                transition: 0.1s transform ease-in-out;
+            }
+
+            .title {
+                font-family: "Bw Modelica SS02 Regular";
+                font-size: 2.3rem;
+                text-transform: uppercase;
+            }
+
+            .score {
+                display: block;
+                font-family: "Bw Modelica SS02 Bold";
+                position: absolute;
+                margin-bottom: -0.5rem;
+                bottom: 1rem;
+                left: 1rem;
+                .number {
+                    font-size: 4rem;
+                    color: $accent-color;
+                }
+            }
+
+            .position {
+                font-family: "Bw Modelica SS02 Bold";
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
+                font-size: 2rem;
+            }
+        }
+
+        .side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .row {
+                display: flex;
+
+                .member {
+                    cursor: pointer;
+                    margin-left: 1rem;
+                    background-color: $active-color;
+                    position: relative;
+                    color: white;
+                    height: 8.5rem;
+                    width: 8.5rem;
+                    padding: 0.5rem;
+
+                    box-sizing: border-box;
+                    transition: 0.1s transform ease-in-out;
+
+                    &:hover {
+                        transform: translateY(-0.2rem);
+                        transition: 0.1s transform ease-in-out;
+                    }
+
+                    .title {
+                        font-family: "Bw Modelica SS02 Regular";
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                    }
+
+                    .score {
+                        display: block;
+                        font-family: "Bw Modelica SS02 Bold";
+                        position: absolute;
+                        margin-bottom: -0.5rem;
+                        bottom: 1.2rem;
+                        left: 0.5rem;
+                        .number {
+                            color: $accent-color;
+                            font-size: 2rem;
+                        }
+                    }
+
+                    .position {
+                        text-transform: uppercase;
+                        font-family: "Bw Modelica SS02 Bold";
+                        position: absolute;
+                        bottom: 1rem;
+                        right: 1rem;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

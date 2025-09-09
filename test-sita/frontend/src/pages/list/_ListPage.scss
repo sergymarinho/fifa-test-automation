@@ -1,0 +1,52 @@
+@import "../../scss/colors.scss";
+
+.listPage {
+    .list {
+        margin-top: 0.8rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .player {
+            background: linear-gradient($not-active-color, $not-active-color-darker);
+            padding: 1rem 1rem;
+            margin-bottom: 0.3rem;
+            width: 40rem;
+            display: flex;
+            cursor: pointer;
+            transition: 0.1s transform ease-in;
+
+            &:hover {
+                background: linear-gradient($active-color, $active-color-darker);
+                transform: translateX(0.3rem);
+                transition: 0.1s transform ease-in;
+            }
+
+            .info {
+                .playerName {
+                    font-family: "Bw Modelica SS02 Bold";
+                    color: $accent-color;
+                    font-size: 1.3rem;
+                    display: block;
+                }
+
+                .description {
+                    display: flex;
+
+                    .team {
+                        margin-right: 1rem;
+                        .field {
+                            color: white;
+                        }
+                        .value {
+                            color: $accent-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pages {
+        display: flex;
+        justify-content: flex-start;
+    }
+}

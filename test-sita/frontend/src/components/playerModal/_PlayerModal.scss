@@ -1,0 +1,256 @@
+@import "../../scss/colors.scss";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000001;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .box {
+        position: relative;
+        overflow: hidden;
+        width: 60rem;
+        box-sizing: border-box;
+        padding: 2rem;
+        background: linear-gradient($not-active-color, $not-active-color-darker);
+        cursor: auto;
+        box-shadow: 5px 5px 5px #00000080;
+
+        .close {
+            position: absolute;
+            right: 1.3rem;
+            top: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                filter: invert(100%);
+                height: 2rem;
+                opacity: 0.8;
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .left {
+                align-items: center;
+                display: flex;
+                .profilePicture {
+                    img {
+                        border: 0.2rem solid $accent-color;
+                        height: 7rem;
+                        width: 7rem;
+                        object-fit: cover;
+                        box-shadow: 0 0 10px #9ecaed;
+                        border-radius: 50%;
+                        background: linear-gradient($active-color, $not-active-color-darker);
+                    }
+                }
+
+                .info {
+                    margin-left: 1rem;
+                    .title {
+                        font-size: 2.5rem;
+                        color: $accent-color;
+                        font-family: "Bw Modelica SS02 Regular";
+                        display: block;
+                    }
+
+                    .club {
+                        font-size: 1.5rem;
+                        color: white;
+                        font-family: "Bw Modelica SS02 Thin";
+                        display: block;
+                    }
+                }
+            }
+            .points {
+                margin-right: 0.5rem;
+                display: block;
+                text-align: center;
+                .value {
+                    font-family: "Bw Modelica SS02 Bold";
+                    display: block;
+                    font-size: 4rem;
+                    color: white;
+                    margin-bottom: -0.8rem;
+                }
+
+                .desc {
+                    display: block;
+                    font-size: 1.5rem;
+                    color: $accent-color;
+                }
+            }
+        }
+
+        .modalContent {
+            margin-top: 1rem;
+            .titleDiv {
+                display: flex;
+                margin-bottom: 1rem;
+                align-items: center;
+                border-bottom: 2px solid $accent-color;
+
+                img {
+                    height: 2rem;
+                    margin-right: 1rem;
+                    filter: invert(100%);
+                    padding-bottom: 0.3rem;
+                }
+
+                .title {
+                    color: white;
+                    font-family: "Bw Modelica SS02 Regular";
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                }
+            }
+
+            .playerInfo {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 2rem;
+                .leftSide {
+                    width: 48%;
+
+                    .generalInfo {
+                        margin-bottom: 2rem;
+                        .team {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .left {
+                                color: white;
+                                font-family: "Bw Modelica SS02 Bold";
+                            }
+
+                            .right {
+                                color: $accent-color;
+                                font-family: "Bw Modelica SS02 Thin";
+                            }
+                        }
+                    }
+                    .links {
+                        display: flex;
+                        margin-top: 2rem;
+                        .link {
+                            margin-right: 1.5rem;
+                            text-align: center;
+                            img {
+                                height: 4rem;
+                                display: block;
+                                transition: 0.1s transform ease-in-out;
+                            }
+
+                            span {
+                                display: block;
+                                margin-top: 0.5rem;
+                                color: white;
+                                font-family: "Bw Modelica SS02 Regular";
+                            }
+
+                            &:hover {
+                                img {
+                                    transform: translateY(-0.3rem);
+                                    transition: 0.1s transform ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rightSide {
+                    width: 48%;
+                    .skills {
+                        margin-bottom: 1rem;
+                        .skill {
+                            position: relative;
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+
+                            .identification {
+                                width: 50%;
+                                display: flex;
+                                align-items: center;
+
+                                img {
+                                    filter: invert(100%);
+                                    margin-right: 0.4rem;
+                                    max-height: 1.5rem;
+                                    width: 1.5rem;
+                                }
+
+                                .name {
+                                    color: white;
+                                }
+                            }
+
+                            .value {
+                                position: absolute;
+                                align-items: center;
+                                justify-content: center;
+                                right: 0%;
+                                bottom: 65%;
+                                border-radius: 0.5rem;
+                                color: $active-color;
+                                font-family: "Bw Modelica SS02 Bold";
+                            }
+                        }
+                    }
+
+                    .traits {
+                        .trait {
+                            display: block;
+                            color: $accent-color;
+
+                            &::before {
+                                content: "- ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.progressBar {
+    position: relative;
+    width: 100%;
+    height: 0.6rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    .progress {
+        background-color: $active-color;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

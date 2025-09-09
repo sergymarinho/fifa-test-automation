@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "0b2b8192-b08f-4216-808b-8f818abf44d8",
+		"name": "Sidia App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/players",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"players"
+							],
+							"query": [
+								{
+									"key": "items",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/players/search",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"players",
+								"search"
+							],
+							"query": [
+								{
+									"key": "items",
+									"value": "10",
+									"description": "[OPT] Item quantity per request",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[OPT] Page request",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Neymar",
+									"description": "[OPT] Name of player",
+									"disabled": true
+								},
+								{
+									"key": "league",
+									"value": "Campeonato Brasileiro Série A",
+									"description": "[OPT] League",
+									"disabled": true
+								},
+								{
+									"key": "club",
+									"value": "Barcelona",
+									"description": "[OPT] Club",
+									"disabled": true
+								},
+								{
+									"key": "nationality",
+									"value": "Brazil",
+									"description": "[OPT] Nationality",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Overral",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/players/top/:topk/overall?league=Campeonato Brasileiro Série A",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"players",
+								"top",
+								":topk",
+								"overall"
+							],
+							"query": [
+								{
+									"key": "position",
+									"value": "GK",
+									"disabled": true
+								},
+								{
+									"key": "league",
+									"value": "Campeonato Brasileiro Série A"
+								},
+								{
+									"key": "nationality",
+									"value": "Brazil",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "topk",
+									"value": "10",
+									"description": "Top X players"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Player Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/players/:id/img",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"players",
+								":id",
+								"img"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "247204",
+									"description": "The Sofifa ID of the player"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Best team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/team/best?nationality=Brazil",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"team",
+								"best"
+							],
+							"query": [
+								{
+									"key": "nationality",
+									"value": "Brazil"
+								},
+								{
+									"key": "league",
+									"value": "Campeonato Brasileiro Série A",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "Every nationality",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/all/nationalities",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"all",
+								"nationalities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Every position",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/all/positions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"all",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Every league",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/players",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"players"
+							],
+							"query": [
+								{
+									"key": "items",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

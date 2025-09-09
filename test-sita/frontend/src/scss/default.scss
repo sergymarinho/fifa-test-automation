@@ -1,0 +1,16 @@
+@import './colors.scss';
+
+.pageTitle{
+    font-family: 'Bw Modelica SS02 Bold';
+    font-size:3rem;
+    text-transform: uppercase;
+    color:$accent-color;
+    display:block;
+}
+
+.pageDescription{
+    font-family: 'Bw Modelica SS02 Regular';
+    font-size:1rem;
+    color:#dddddd;
+    display:block;
+}

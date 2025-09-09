@@ -1,0 +1,131 @@
+@import "../../scss/colors.scss";
+
+$margin-left: 5%;
+
+.gameLayout {
+    background-image: url("../../assets/images/Background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        min-height: 35rem;
+        margin-left: $margin-left;
+        padding-left: 0.3rem;
+        padding-top: 3rem;
+        z-index: 100;
+    }
+
+    .menuOnLayout {
+        margin-top: 3rem;
+        flex-grow: 1;
+        z-index: 1;
+        margin-left: $margin-left;
+    }
+
+    .backgroundImage {
+        overflow: hidden;
+        z-index: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        height: 100%;
+        pointer-events: none;
+        width: 100%;
+        .mbappe {
+            overflow: hidden;
+            height: 100%;
+            z-index: 0;
+            position: fixed;
+            top: 0;
+            margin-left: 45%;
+        }
+    }
+}
+
+.menu {
+    .items {
+        display: flex;
+
+        .item {
+            width: 25vh;
+            height: 25vh;
+            background: linear-gradient($not-active-color, $not-active-color-darker);
+            position: relative;
+            margin: 0 0.5rem;
+            box-sizing: border-box;
+            padding-top: 1rem;
+            cursor: pointer;
+            border: 0.1rem solid ($accent-color-weak);
+            text-decoration: none;
+
+            transition: 0.1s margin ease-in-out, 0.1s transform ease-in-out;
+
+            .title {
+                font-weight: bold;
+                color: $accent-color;
+                text-transform: uppercase;
+                padding-left: 1rem;
+                font-size: 1.4rem;
+                font-family: "Bw Modelica SS02 Light";
+            }
+
+            .icon {
+                position: absolute;
+                height: 30%;
+                bottom: 10%;
+                right: 5%;
+                filter: invert(38%) sepia(13%) saturate(5412%) hue-rotate(237deg) brightness(90%) contrast(101%);
+            }
+        }
+
+        .active {
+            background: linear-gradient($active-color, $active-color-darker);
+            cursor: none;
+            position: relative;
+            pointer-events: none;
+            transform: scale(1.05);
+            margin: 0 0.8rem;
+            transition: 0.1s margin ease-in-out, 0.1s transform ease-in-out;
+
+            .title {
+                &::before {
+                    content: " ";
+                    height: 1.3em;
+                    left: -0.1rem;
+                    position: absolute;
+                    border-left: 0.3rem solid $warning;
+                }
+            }
+
+            .icon {
+                filter: invert(87%) sepia(21%) saturate(1292%) hue-rotate(90deg) brightness(101%) contrast(95%);
+            }
+        }
+    }
+
+    .tips {
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-top: 1rem;
+        text-transform: uppercase;
+        font-family: "Bw Modelica SS02 Thin";
+        margin-left: 0.5rem;
+        font-size: 0.8rem;
+
+        img {
+            height: 1rem;
+            filter: invert(100%);
+            margin-right: 0.3rem;
+        }
+    }
+}
